@@ -1,21 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  BellIcon, CalendarDaysIcon, ChartBarIcon,
   ArrowRightIcon, ClipboardDocumentListIcon,
-  ScissorsIcon, BuildingOffice2Icon,
+  ScissorsIcon,
 } from '@heroicons/react/24/outline';
 import { ProximieLogo } from '../components/ProximieLogo';
 
 const RESIDENT_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSeR-7AokPpVSLYjWP5qlymEdu5rIvknzubjoMxXSPKaRIrQzQ/viewform?usp=publish-editor';
 const SURGEON_FORM  = 'https://docs.google.com/forms/d/e/1FAIpQLScAit0SYBnOe2q-iMgWxGU92xpEa0sx3JVxs49b_fP4T_aj-Q/viewform?usp=sharing&ouid=101337914910408991885';
-
-const features = [
-  { icon: BellIcon,            color: 'var(--accent)', bg: 'var(--accent-dim)',        title: 'Never miss a case',          desc: 'Push notifications when new sessions open'        },
-  { icon: CalendarDaysIcon,    color: 'var(--green)',  bg: 'rgba(16,185,129,0.1)',     title: 'Shared calendar',            desc: 'All upcoming surgeries at a glance'               },
-  { icon: ChartBarIcon,        color: 'var(--amber)',  bg: 'rgba(245,158,11,0.1)',     title: 'Track progress',             desc: 'Sessions registered, attended, eligibility'       },
-  { icon: BuildingOffice2Icon, color: '#a78bfa',       bg: 'rgba(167,139,250,0.1)',   title: 'Institution benchmarking',   desc: 'Compare performance across hospitals'             },
-];
 
 const registrationOptions = [
   {
@@ -160,45 +152,6 @@ export default function LandingScreen() {
           </a>
         ))}
 
-        {/* ── Feature list — informational, NOT interactive ── */}
-        <div style={{
-          marginTop: 32,
-          paddingTop: 24,
-          borderTop: '1px solid var(--border)',
-          display: 'flex',
-          flexDirection: 'column',
-        }}>
-          {features.map(({ icon: Icon, color, bg, title, desc }, i) => (
-            <div
-              key={title}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 14,
-                paddingTop: i === 0 ? 0 : 16,
-                paddingBottom: 16,
-                borderBottom: i < features.length - 1 ? '1px solid var(--border)' : 'none',
-              }}
-            >
-              <div style={{
-                width: 38,
-                height: 38,
-                borderRadius: 10,
-                background: bg,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-              }}>
-                <Icon style={{ width: 19, height: 19, color }} />
-              </div>
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 2, color: 'var(--text)' }}>{title}</div>
-                <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.4 }}>{desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
       </main>
 
       {/* ── Footer ── */}
