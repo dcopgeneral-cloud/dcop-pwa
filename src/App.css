@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Proximie brand â€” dark mode */
+  --bg:        #0a1628;
+  --bg2:       #0d1e35;
+  --surface:   #112240;
+  --surface2:  #162c4f;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.13);
+  --accent:    #00c2e0;
+  --accent-dim: rgba(0,194,224,0.12);
+  --green:     #10b981;
+  --surgeon:   #f4845f;
+  --amber:     #f59e0b;
+  --red:       #ef4444;
+  --text:      #f0f4ff;
+  --muted:     #5a7499;
+  --subtle:    #1e3355;
+  --nav-height: 68px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* â”€â”€ Screen container â”€â”€ */
+.screen-content {
+  height: calc(100vh - var(--nav-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+}
+.screen-content::-webkit-scrollbar { display: none; }
+
+/* â”€â”€ Status bar â”€â”€ */
+.status-bar {
+  padding: 10px 24px 4px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+/* â”€â”€ App header â”€â”€ */
+.app-header {
+  padding: 8px 20px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* â”€â”€ Logo â”€â”€ */
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-mark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 22px;
+  height: 22px;
+}
+.logo-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.logo-dot.cyan { background: var(--accent); }
+
+/* â”€â”€ Section title â”€â”€ */
+.section-title {
+  padding: 0 20px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.section-link {
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* â”€â”€ Divider â”€â”€ */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* â”€â”€ Card â”€â”€ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+/* â”€â”€ Badges â”€â”€ */
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.badge-standard   { background: rgba(0,194,224,0.12);   color: var(--accent); }
+.badge-master     { background: rgba(16,185,129,0.12);  color: var(--green); }
+.badge-registered { background: rgba(245,158,11,0.12);  color: var(--amber); }
+.badge-full       { background: rgba(239,68,68,0.10);   color: var(--red); }
+
+/* â”€â”€ Buttons â”€â”€ */
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity 0.15s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.btn:active { transform: scale(0.98); }
+.btn:disabled { cursor: not-allowed; opacity: 0.5; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #0a1628;
+  padding: 14px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.btn-sm { font-size: 12px; padding: 7px 13px; border-radius: 8px; }
+
+.btn-register { background: var(--accent);              color: #0a1628; font-weight: 700; }
+.btn-success  { background: rgba(16,185,129,0.12);      color: var(--green); }
+.btn-danger   { background: rgba(239,68,68,0.08);       color: var(--red); }
+
+/* â”€â”€ Capacity bar â”€â”€ */
+.capacity-track {
+  height: 3px;
+  background: var(--subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.capacity-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* â”€â”€ Form inputs â”€â”€ */
+.input-group { margin-bottom: 16px; }
+.input-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+.input-field {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-size: 14px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input-field:focus { border-color: var(--accent); }
+.input-field::placeholder { color: var(--muted); }
+
+/* â”€â”€ Spinner â”€â”€ */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* â”€â”€ Toast â”€â”€ */
+.toast {
+  position: fixed;
+  bottom: calc(var(--nav-height) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  animation: toastIn 0.2s ease;
+}
+.toast.error { border-color: rgba(239,68,68,0.3); color: var(--red); }
+@keyframes toastIn { from { opacity:0; transform: translateX(-50%) translateY(8px); } }
+
+/* â”€â”€ Splash screen â”€â”€ */
+.splash {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── Capacity fill colours ── */
+.cap-blue  { background: var(--accent); }
+.cap-amber { background: var(--amber); }
+.cap-red   { background: var(--red); }
